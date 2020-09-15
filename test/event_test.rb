@@ -40,9 +40,5 @@ class EventTest < Minitest::Test
     assert_equal ["Rocky Mountain Pies", "Ba-Nom-a-Nom", "Palisade Peach Shack"], @event.food_truck_names
     assert_equal [@food_truck1, @food_truck3], @event.food_trucks_that_sell(@item1)
     assert_equal [@food_truck2], @event.food_trucks_that_sell(@item4)
-
-    assert_equal 148.75, @food_truck1.potential_revenue
-    assert_equal 345.00, @food_truck2.potential_revenue
-    assert_equal 243.75, @food_truck3.potential_revenue
   end
 end
