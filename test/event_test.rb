@@ -55,8 +55,8 @@ class EventTest < Minitest::Test
       @item3 => {quantity: 50, food_trucks: [@food_truck2]},
       @item4 => {quantity: 35, food_trucks: [@food_truck4]}
     }
+    assert_equal ["Apple Pie (Slice)", "Banana Nice Cream", "Peach Pie (Slice)", "Peach-Raspberry Nice Cream"], @event.sorted_item_list
     assert_equal expected, @event.total_inventory
     assert_equal [item1], @event.overstocked_items
-    assert_equal ["Apple Pie (Slice)", "Banana Nice Cream", "Peach Pie (Slice)", "Peach-Raspberry Nice Cream"], @event.sorted_item_list
   end
 end

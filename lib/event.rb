@@ -21,4 +21,26 @@ class Event
       truck.inventory.keys.include?(item)
     end
   end
+
+  def total_inventory
+    items = @food_trucks.flat_map do |truck|
+      truck.inventory.keys
+    end.uniq
+    inventory = Hash.new({})
+    items.each do |item|
+      inventory[item] = {quantity: 0, food_trucks: []}
+    end
+    inventory.sum do |item, data|
+
+    end
+  end
+
+  def sorted_item_list
+    items = @food_trucks.flat_map do |truck|
+      item = truck.inventory.keys
+    end.uniq
+    items.map do |item|
+      item.name
+    end.sort
+  end
 end
