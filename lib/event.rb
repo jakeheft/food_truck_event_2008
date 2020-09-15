@@ -21,8 +21,4 @@ class Event
       truck.inventory.keys.include?(item)
     end
   end
-
-  def potential_revenue
-
-  end
 end
